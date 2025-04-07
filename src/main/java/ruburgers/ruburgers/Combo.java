@@ -9,6 +9,15 @@ public class Combo extends MenuItem{
         this.sandwich = sandwich;
         this.drink = drink;
         this.side = side;
+        if (side != Side.CHIPS && side != Side.APPLE_SLICES) {
+            throw new IllegalArgumentException("Combos only allow chips or apple slices as the side.");
+        }
+
+        // Only allow medium drinks of cola, tea, or juice
+        if (drink.getSize() != Size.MEDIUM ||
+                !(drink.getFlavor() == Flavor.COLA || drink.getFlavor() == Flavor.TEA || drink.getFlavor() == Flavor.JUICE)) {
+            throw new IllegalArgumentException("Combos only allow a medium cola, tea, or juice as the drink.");
+        }
     }
 
     @Override

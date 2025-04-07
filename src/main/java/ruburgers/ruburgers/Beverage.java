@@ -14,6 +14,14 @@ public class Beverage extends MenuItem {
         this.quantity = quantity;
     }
 
+    public Size getSize() {
+        return size;
+    }
+
+    public Flavor getFlavor() {
+        return flavor;
+    }
+
     @Override
     public double price() {
         double basePrice = switch (size) {
