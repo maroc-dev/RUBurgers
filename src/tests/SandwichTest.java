@@ -1,3 +1,5 @@
+package tests;
+
 import static org.junit.jupiter.api.Assertions.*;
 import org.testng.annotations.Test;
 import ruburgers.ruburgers.AddOns;
