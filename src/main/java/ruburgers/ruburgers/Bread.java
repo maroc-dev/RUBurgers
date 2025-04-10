@@ -2,7 +2,7 @@ package ruburgers.ruburgers;
 
 public enum Bread {
     BRIOCHE,
-    WHEAT_BREAD,
+    WHEAT,
     PRETZEL,
     BAGEL,
     SOURDOUGH
