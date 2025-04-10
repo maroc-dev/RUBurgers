@@ -1,3 +1,4 @@
+package test;
 
 import model.AddOns;
 import model.Protein;

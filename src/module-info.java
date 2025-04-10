@@ -4,9 +4,9 @@ module model {
 
     requires junit;
 
-
     opens model to javafx.fxml;
-    exports model;
-    exports controller;
     opens controller to javafx.fxml;
+    exports model;
+    exports test;
+    exports controller;
 }
