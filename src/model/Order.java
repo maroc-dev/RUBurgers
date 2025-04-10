@@ -1,9 +1,9 @@
-package ruburgers.ruburgers;
+package model;
 
 import java.util.ArrayList;
 
 public class Order {
-    private int number; //a unique integer to identify the order
+    private int number;
     private ArrayList<MenuItem> items;
 
     public Order(int number) {
@@ -15,13 +15,24 @@ public class Order {
         items.add(item);
     }
 
+    public void removeItem(MenuItem item) {
+        items.remove(item);
+    }
+
+    public void clearItems() {
+        items.clear();
+    }
+
+    public ArrayList<MenuItem> getItems() {
+        return items;
+    }
+
     public double totalPrice() {
         double total = 0;
         for (MenuItem item: items) {
             total += item.price();
         }
         return total;
-
     }
 
     @Override

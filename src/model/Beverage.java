@@ -1,7 +1,4 @@
-package ruburgers.ruburgers;
-
-import ruburgers.ruburgers.Size;
-import ruburgers.ruburgers.Flavor;
+package model;
 
 public class Beverage extends MenuItem {
     private Size size;

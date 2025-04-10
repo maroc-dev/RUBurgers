@@ -1,4 +1,4 @@
-package ruburgers.ruburgers;
+package model;
 
 public abstract class MenuItem {
     protected int quantity;

@@ -1,4 +1,4 @@
-package ruburgers.ruburgers;
+package model;
 
 public enum Protein {
     ROAST_BEEF(10.99),

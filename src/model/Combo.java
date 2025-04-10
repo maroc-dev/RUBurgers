@@ -1,4 +1,4 @@
-package ruburgers.ruburgers;
+package model;
 
 public class Combo extends MenuItem{
     private Sandwich sandwich;

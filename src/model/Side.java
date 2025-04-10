@@ -1,4 +1,4 @@
-package ruburgers.ruburgers;
+package model;
 
 public enum Side {
     CHIPS(1.99),

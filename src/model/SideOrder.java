@@ -1,4 +1,4 @@
-package ruburgers.ruburgers;
+package model;
 
 public class SideOrder extends MenuItem {
     private Side type;

@@ -1,4 +1,4 @@
-package ruburgers.ruburgers;
+package model;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package ruburgers.ruburgers;
+package model;
 
 public enum AddOns {
     LETTUCE(0.30),
