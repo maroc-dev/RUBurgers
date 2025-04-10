@@ -1,24 +1,25 @@
-import static org.junit.jupiter.api.Assertions.*;
-import org.testng.annotations.Test;
-import ruburgers.ruburgers.AddOns;
-import ruburgers.ruburgers.Protein;
-import ruburgers.ruburgers.Sandwich;
-import ruburgers.ruburgers.Bread;
+
+import model.AddOns;
+import model.Protein;
+import model.Sandwich;
+import model.Bread;
 
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertEquals;
 
-class SandwichTest {
-    @Test
-    void testPriceWithChickenAndNoAddOns() {
+
+public class SandwichTest {
+    @org.junit.Test
+    public void testPriceWithChickenAndNoAddOns() {
         ArrayList<AddOns> addOns = new ArrayList<>();
         Sandwich sandwich = new Sandwich(Bread.BRIOCHE, Protein.CHICKEN, addOns, 1);
         double expected = Protein.CHICKEN.price(); // 8.99
         assertEquals(expected, sandwich.price(), 0.01);
     }
 
-    @Test
-    void testPriceWithRoastBeefAndCheeseLettuce() {
+    @org.junit.Test
+    public void testPriceWithRoastBeefAndCheeseLettuce() {
         ArrayList<AddOns> addOns = new ArrayList<>();
         addOns.add(AddOns.CHEESE);   // +1.00
         addOns.add(AddOns.LETTUCE);  // +0.30
@@ -28,8 +29,8 @@ class SandwichTest {
         assertEquals(expected, sandwich.price(), 0.01);
     }
 
-    @Test
-    void testPriceWithSalmonAndMultipleAddOnsDoubleQuantity() {
+    @org.junit.Test
+    public void testPriceWithSalmonAndMultipleAddOnsDoubleQuantity() {
         ArrayList<AddOns> addOns = new ArrayList<>();
         addOns.add(AddOns.CHEESE);     // 1.00
         addOns.add(AddOns.TOMATOES);     // 0.30

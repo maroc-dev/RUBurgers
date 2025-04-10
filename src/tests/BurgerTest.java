@@ -1,13 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
-import org.testng.annotations.Test;
-import ruburgers.ruburgers.AddOns;
-import ruburgers.ruburgers.Protein;
-import ruburgers.ruburgers.Burger;
-import ruburgers.ruburgers.Bread;
+import static org.junit.Assert.assertEquals;
+import model.AddOns;
+import model.Protein;
+import model.Burger;
+import model.Bread;
 
 import java.util.ArrayList;
 public class BurgerTest {
-    @Test
+    @org.junit.Test
     public void testSinglePattyBurgerPrice() {
         ArrayList<AddOns> addOns = new ArrayList<>();
         addOns.add(AddOns.LETTUCE); // $0.30
@@ -21,7 +20,7 @@ public class BurgerTest {
         assertEquals(expected, burger.price(), 0.01);
     }
 
-    @Test
+    @org.junit.Test
     public void testDoublePattyBurgerPrice() {
         ArrayList<AddOns> addOns = new ArrayList<>();
         addOns.add(AddOns.AVOCADOS); // $0.50

@@ -217,9 +217,8 @@ public class Burgers {
                 return;
             }
 
-            // Initialize UI components
             // Set up bread options
-            burgerBreadOptions.getItems().addAll(Bread.BRIOCHE, Bread.WHEAT_BREAD, Bread.PRETZEL);
+            burgerBreadOptions.getItems().addAll(Bread.BRIOCHE, Bread.WHEAT, Bread.PRETZEL);
 
             // Set up patty options
             burgerPattyOptions.getItems().addAll("Single Patty", "Double Patty");
