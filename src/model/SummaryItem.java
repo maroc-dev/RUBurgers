@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Class for the Item summarys.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class SummaryItem {
     private String label;
     private double amount;

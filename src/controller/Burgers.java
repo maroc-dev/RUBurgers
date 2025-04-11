@@ -7,7 +7,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import model.*;
+import javafx.stage.Stage;
+import model.MenuItem;
 
+/**
+ * Controller class for the Burgers view.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class Burgers {
 
     @FXML
@@ -51,9 +59,33 @@ public class Burgers {
 
     @FXML
     void burgerComboSelection(MouseEvent event) {
-        updatePrice();
+        try {
+            // Create a burger from current selections
+            Burger burger = createBurgerFromSelections();
+
+            // Get the stage
+            Stage stage = (Stage) burgerQuantity.getScene().getWindow();
+
+            // Show combo selection popup with the burger toggle button
+            new ComboSelectionPopup(burger, stage, isBurgerCombo, burgerPriceLabel);
+
+            isBurgerCombo.setSelected(false);
+            resetForm();
+
+        } catch (IllegalArgumentException e) {
+            // Show error for invalid selections
+            showAlert("Selection Error", e.getMessage());
+            isBurgerCombo.setSelected(false);
+        }
     }
 
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
     @FXML
     void burgerOrder(MouseEvent event) {
         try {

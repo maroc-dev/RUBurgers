@@ -15,6 +15,12 @@ import model.Order;
 import model.OrderManager;
 import model.SummaryItem;
 
+/**
+ * Controller class for the CurrentOrder.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class CurrentOrder {
 
     @FXML
@@ -41,17 +47,20 @@ public class CurrentOrder {
             return;
         }
 
-        // Handle checkout logic
-        OrderManager.getInstance().placeOrder();
+
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Order Placed");
         alert.setHeaderText(null);
         alert.setContentText("Your order has been placed successfully!");
+        OrderManager.getInstance().addToOrderHistory(order);
         alert.showAndWait();
 
+
+        clearOrder();
         // Update UI
         updateOrderDisplay();
+
     }
 
     @FXML
@@ -85,12 +94,8 @@ public class CurrentOrder {
 
     @FXML
     void clearOrder() {
-        Order order = OrderManager.getInstance().getCurrentOrder();
-        if (order.getItems().isEmpty()) {
-            return;
-        }
+        OrderManager.getInstance().setCurrentOrder(null);
 
-        order.clearItems();
         updateOrderDisplay();
     }
 
@@ -99,16 +104,20 @@ public class CurrentOrder {
 
         // Clear the list
         orderList.getItems().clear();
+        try {
+            // Add all order items
+            orderList.getItems().addAll(order.getItems());
+        } catch (Exception e) {
+            return;
+        }
 
-        // Add all order items
-        orderList.getItems().addAll(order.getItems());
 
         // Only add summary if there are items
         if (!order.getItems().isEmpty()) {
             // Calculate totals
-            double subtotal = order.totalPrice();
-            double tax = subtotal * 0.06625; // NJ tax rate
-            double total = subtotal + tax;
+            double subtotal = order.subtotal();
+            double tax = order.taxAmount();
+            double total = order.orderTotal();
 
             // Add a spacer
             orderList.getItems().add("----------------------------------------");

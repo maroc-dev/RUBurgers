@@ -2,6 +2,12 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Class for the Burger.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class Burger extends Sandwich {
     private boolean doublePatty;
 

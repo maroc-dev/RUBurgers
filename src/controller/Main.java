@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ClassLoader.getSystemResource("view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 720, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 860, 400);
         stage.setTitle("RUBurgers");
         stage.setScene(scene);
         stage.show();

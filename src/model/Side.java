@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Enum for the Sides.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public enum Side {
     CHIPS(1.99),
     FRIES(2.49),

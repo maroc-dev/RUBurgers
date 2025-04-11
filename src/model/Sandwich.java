@@ -2,6 +2,12 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Class for the Sandwich.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class Sandwich extends MenuItem {
     protected Bread bread;
     protected Protein protein;
@@ -21,6 +27,11 @@ public class Sandwich extends MenuItem {
             basePrice += addOn.getPrice();
         }
         return basePrice * quantity;
+    }
+
+    public String toComboString() {
+        return quantity + " x " + bread + " sandwich with " + protein +
+                " and " + addOns.toString();
     }
 
     @Override

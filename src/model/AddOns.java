@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Enum for the Add ons.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public enum AddOns {
     LETTUCE(0.30),
     TOMATOES(0.30),

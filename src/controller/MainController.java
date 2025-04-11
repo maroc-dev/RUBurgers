@@ -9,10 +9,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Tab;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import model.OrderManager;
 
+/**
+ * Controller class for the MainController.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class MainController {
 
     @FXML
@@ -71,7 +76,7 @@ public class MainController {
     @FXML
     void sandwichTabSelected(Event event) {
         if (sandwichTab.isSelected()) {
-            loadView(sandwichTab, "sandwichs.fxml", sandwichView);
+            loadView(sandwichTab, "sandwiches.fxml", sandwichView);
         }
     }
 
@@ -88,7 +93,6 @@ public class MainController {
                 // Load the view if it's not already loaded
                 URL resource = getClass().getClassLoader().getResource(fxmlFile);
                 if (resource == null) {
-                    System.err.println("Could not find " + fxmlFile);
                     return;
                 }
 
@@ -101,7 +105,6 @@ public class MainController {
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("Error loading " + fxmlFile + ": " + e.getMessage());
 
             // Show error alert
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -139,8 +142,6 @@ public class MainController {
 
                     // Add it to the current order pane
                     currentOrderPane.getChildren().add(currentOrderView);
-                } else {
-                    System.err.println("Could not find current-order.fxml");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -158,8 +159,6 @@ public class MainController {
                     FXMLLoader loader = new FXMLLoader(resource);
                     burgerView = loader.load();
                     burgerTab.setContent(burgerView);
-                } else {
-                    System.err.println("Could not find burgers.fxml");
                 }
             } catch (IOException e) {
                 e.printStackTrace();

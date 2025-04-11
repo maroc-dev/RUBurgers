@@ -1,8 +1,17 @@
 package controller;
 
+import model.OrderManager;
+
+/**
+ * Controller class for the CurrentOrderManager.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class CurrentOrderManager {
     private static CurrentOrderManager instance;
     private CurrentOrder currentOrderController;
+    private OrderManager orderManager = OrderManager.getInstance();
 
     private CurrentOrderManager() {}
 
@@ -22,4 +31,9 @@ public class CurrentOrderManager {
             currentOrderController.updateOrderDisplay();
         }
     }
+
+    public OrderManager getOrderManager() {
+        return orderManager;
+    }
+
 }

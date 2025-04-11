@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Class for the Beverage.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public class Beverage extends MenuItem {
     private Size size;
     private Flavor flavor;

@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Enum for the Protein.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public enum Protein {
     ROAST_BEEF(10.99),
     SALMON(9.99),

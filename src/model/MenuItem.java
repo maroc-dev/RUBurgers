@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Abstract class for the MenuItems.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public abstract class MenuItem {
     protected int quantity;
     public abstract double price();

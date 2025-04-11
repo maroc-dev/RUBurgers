@@ -1,5 +1,11 @@
 package model;
 
+/**
+ * Enum for the Flavors.
+ *
+ * @author Marco Ferreira
+ * @author Sathish Kosalram
+ */
 public enum Flavor {
     COLA,
     LEMONADE,
